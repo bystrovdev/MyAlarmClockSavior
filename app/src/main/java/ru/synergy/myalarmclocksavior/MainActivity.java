@@ -19,6 +19,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setAlarm = findViewById(R.id.clock_button);
 
+        setAlarm.setOnClickListener(v -> {
+            MaterialTimePicker materialTimePicker = new MaterialTimePicker.Builder()
+                    .setTimeFormat(TimeFormat.CLOCK_24H)
+                    .setHour(2)
+                    .setMinute(20)
+                    .setTitleText("Выберите время для будильника")
+                    .build();
+
+            materialTimePicker.addOnPositiveButtonClickListener(view -> {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.MILLISECOND, 0);
+                calendar.set(Calendar.MINUTE, materialTimePicker.getMinute());
+                calendar.set(Calendar.HOUR_OF_DAY, materialTimePicker.getHour());
+            });
+        });
     }
 }
