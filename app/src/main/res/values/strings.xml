@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyAlarmClockSavior</string>
+    <string name="clock">Выбрать время</string>
 </resources>
