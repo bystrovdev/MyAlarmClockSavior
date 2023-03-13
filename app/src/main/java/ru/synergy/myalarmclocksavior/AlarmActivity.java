@@ -1,9 +1,11 @@
 package ru.synergy.myalarmclocksavior;
 
+import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AlarmActivity extends AppCompatActivity {
 
     Ringtone ringtone;
+    Button btnClose;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_alarm);
+
+
+
 
         Uri notificationUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         ringtone = RingtoneManager.getRingtone(this, notificationUri);

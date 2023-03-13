@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">MyAlarmClockSavior</string>
     <string name="clock">Выбрать время</string>
+    <string name="er">er</string>
+    <string name="Disable">Выключить</string>
 </resources>
